@@ -164,11 +164,3 @@ The dataset contains **50 rows** spanning **January to June 2024** across catego
 This project demonstrates the use of **core SQL techniques** for time-series analysis, including aggregation, filtering, and joins. It reflects a **real-world analytical workflow**, making it highly relevant for **data analyst roles**.
 
 ---
-
-If you want next:
-
-* Repository name
-* 350-character description
-* Resume bullet points
-
-Just tell me 👍
