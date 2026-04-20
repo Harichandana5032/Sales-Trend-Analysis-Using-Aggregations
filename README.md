@@ -7,13 +7,13 @@ Overview
 This project focuses on analyzing monthly sales trends from an online retail dataset using SQL aggregation techniques. It combines date extraction, grouping, filtering, and multi-table joins to derive meaningful insights on revenue and order volume.
 
 Objectives
-Extract month and year from order dates for time-based analysis
-Calculate monthly revenue using aggregation functions
-Measure order volume using distinct order counting
+Extract month and year from order dates
+Calculate monthly revenue using aggregation
+Measure order volume using distinct counting
 Filter results for specific time periods
-Identify top performing months by revenue
-Handle NULL values safely in aggregations
-Apply multi-table joins combined with GROUP BY
+Identify top-performing months
+Handle NULL values safely
+Apply multi-table joins with GROUP BY
 Dataset Used
 Online Sales Dataset
 
@@ -36,72 +36,71 @@ products
 product_id
 product_name
 
-Dataset contains 50 rows spanning January to June 2024 across multiple product categories such as Electronics, Clothing, Books, Home, and Accessories.
+The dataset contains 50 rows spanning January to June 2024 across categories such as Electronics, Clothing, Books, Home, and Accessories.
 
 Work Completed
 Database Setup
-Created the orders table with relevant columns
-Inserted 50 rows of transactional data
-Included NULL values for aggregation practice
+Created tables with relevant schema
+Inserted 50 transactional records
+Included NULL values for practice
 Verified data integrity before analysis
 Month Extraction
-Used EXTRACT(MONTH FROM order_date) to derive month number
-Confirmed correct integer output for each record
+Used EXTRACT(MONTH FROM order_date)
+Derived month values (1–12)
 Observed row-level output without grouping
 Grouping by Year and Month
-Extracted year using EXTRACT(YEAR FROM order_date)
-Applied GROUP BY on year and month expressions
+Used EXTRACT(YEAR FROM order_date)
+Applied GROUP BY on year and month
 Learned that aliases cannot be used in GROUP BY
-Observed aggregation into one row per time period
+Aggregated data into time-based summaries
 Monthly Revenue Calculation
-Used SUM(amount) to calculate total monthly revenue
-Observed aggregation of transactional data into summarized insights
+Applied SUM(amount) to compute revenue
+Converted raw transactions into monthly totals
 Order Volume Counting
-Used COUNT(DISTINCT order_id) to count unique orders
-Compared with COUNT(*) to understand differences
-Learned how NULL values impact counting
+Used COUNT(DISTINCT order_id)
+Compared with COUNT(*)
+Understood handling of duplicates and NULLs
 Sorting Results
 Used ORDER BY for chronological sorting
-Sorted by revenue to identify top-performing months
-Applied LIMIT to extract top results
+Sorted by revenue (descending)
+Applied LIMIT for top results
 Filtering by Time Period
-Used WHERE clause to filter Q1 (Jan–Mar)
-Used WHERE clause to filter Q2 (Apr–Jun)
-Compared performance across time periods
+Used WHERE clause for Q1 and Q2 filtering
+Compared quarter-wise performance
 NULL Handling
 Observed SUM() ignores NULL values
-Used COALESCE(amount, 0) for explicit handling
-Measured NULL count using COUNT(*) minus COUNT(column)
+Used COALESCE(amount, 0)
+Counted NULLs using COUNT difference technique
 Multi-table JOIN with Aggregations
-Joined orders, order_items, and products tables
-Calculated revenue using quantity * unit_price
-Resolved column errors using DESCRIBE
-Fixed incorrect GROUP BY causing row duplication
-Achieved clean aggregation at product-month level
+Joined orders, order_items, and products
+Calculated revenue using quantity × unit_price
+Debugged errors using DESCRIBE
+Fixed incorrect GROUP BY issues
+Achieved clean product-month level aggregation
 Concepts Covered
-EXTRACT() for date-based analysis
-GROUP BY with multiple columns
-SUM() for revenue calculation
+EXTRACT() for date transformation
+GROUP BY for aggregation
+SUM() for revenue
 COUNT(DISTINCT) vs COUNT(*)
-ORDER BY for sorting aggregated data
+ORDER BY for sorting
 WHERE for filtering
 COALESCE() for NULL handling
-Multi-table JOINs with aggregation
-Debugging SQL queries using DESCRIBE
+JOIN operations with aggregation
+Query debugging techniques
 Key Findings
-Revenue shows a consistent upward trend from January to April 2024
-April recorded the highest revenue month
-Electronics category generated the highest revenue
+Revenue shows a consistent upward trend from January to April
+April recorded the highest revenue
+Electronics category contributed the most revenue
 Order volume remained stable across months
-A small set of products contributed most of the revenue
+A small set of products drives most revenue
 Tools and Technologies
 SQL (MySQL)
 MySQL Workbench
 Future Enhancements
 Add category-wise monthly analysis
 Calculate month-over-month growth
-Implement window functions for advanced analytics
-Build dashboard visualization using Power BI or Tableau
+Use window functions for advanced insights
+Build Power BI or Tableau dashboard
 Conclusion
 
-This project demonstrates practical SQL skills for time-series analysis, including aggregation, filtering, and multi-table joins. It reflects a real-world workflow from raw data preparation to business insight generation, making it relevant for data analyst roles.
+This project demonstrates the use of core SQL techniques for time-series analysis, including aggregation, filtering, and joins. It reflects a real-world analytical workflow, making it highly relevant for data analyst roles.
